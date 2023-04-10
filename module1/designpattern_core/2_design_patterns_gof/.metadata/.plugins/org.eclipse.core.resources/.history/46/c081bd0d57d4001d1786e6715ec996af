@@ -1,0 +1,11 @@
+
+Strategy Pattern
+-----------------
+	=>The strategy pattern is intended to provide a means to define a family of algorithms,    		encapsulate each one as an object, and make them interchangeable select algo at run time 		convert IS-A to HAS-A
+
+	=> It separate algorithms into classes that can be plugged in at runtime.
+ 
+	=> I need to provide discount strategy for code flexibility 
+
+	=> used when we have multiple algorithm for a specific task and client
+	 decides the actual implementation to be used at runtime.

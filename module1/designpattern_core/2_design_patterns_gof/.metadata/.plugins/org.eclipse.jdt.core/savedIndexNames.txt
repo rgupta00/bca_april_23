@@ -1,0 +1,7 @@
+INDEX VERSION 1.132+/home/raj/Documents/busy_coder_april_weekend_batch/module1/designpattern_core/2_design_patterns_gof/.metadata/.plugins/org.eclipse.jdt.core
+859077129.index
+13491760.index
+4153954267.index
+1924484980.index
+1865797976.index
+3724106518.index
