@@ -9,9 +9,14 @@ public class Main {
 				new Book("129", "power of subconsious mind", "foo", 600)
 				);
 		
-		List<Book> selectedBooks=BookService.getAllBooksOnCondition(books, 
-				book-> book.getPrice()>=500);
+//		List<Book> selectedBooks=BookService.getAllBooksByPredicate(books, 
+//				book-> book.getPrice()>=500);
+//		
+//		selectedBooks.forEach(b-> System.out.println(b));
 		
-		selectedBooks.forEach(b-> System.out.println(b));
+		List<Book> selectedBooksAllJava=BookService.getAllBooksByPredicate(books, 
+				book-> book.getTitle().contains("java"));
+		
+		selectedBooksAllJava.forEach(b-> System.out.println(b));
 	}
 }

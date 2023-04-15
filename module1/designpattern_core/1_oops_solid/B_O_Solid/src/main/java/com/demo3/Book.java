@@ -1,8 +1,7 @@
 package com.demo3;
-//DTO DAO
+
 public class Book {
 	private int id;
-	//jsr 303
 	private String isbn;
 	private String title;
 	private String author;

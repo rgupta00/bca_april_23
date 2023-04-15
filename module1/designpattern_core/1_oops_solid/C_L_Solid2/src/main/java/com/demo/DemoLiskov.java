@@ -42,6 +42,7 @@ class Square extends Rectangle {
 		super.setB(changeDimension);
 		setB(changeDimension);
 	}
+
 }
 
 public class DemoLiskov {
@@ -56,6 +57,7 @@ public class DemoLiskov {
 		int area=square.calculateArea();
 		System.out.println(area);
 		square.setB(10);
+		square.setL(3);
 		
 		System.out.println(area);
 	}
