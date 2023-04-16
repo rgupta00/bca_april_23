@@ -4,10 +4,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="car" class="com.demo.attempt3.Car" scope="prototype">
+	<!-- <bean id="car" class="com.demo.attempt3.Car" scope="prototype">
 		<constructor-arg index="0" ref="engine"></constructor-arg>
 			<constructor-arg index="1" ref="tyre"></constructor-arg>
 	</bean>
 	<bean id="engine" class="com.demo.attempt3.TurboEngine" scope="prototype"/>
-	<bean id="tyre" class="com.demo.attempt3.MrfTyre" scope="prototype"></bean>
+	<bean id="tyre" class="com.demo.attempt3.MrfTyre" scope="prototype"></bean> -->
 </beans>

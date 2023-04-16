@@ -1,0 +1,34 @@
+package com.dp.creational.a.singleton;
+import java.util.*;
+import java.lang.reflect.Method;
+
+public class Main {
+
+	public static void main(String[] args) throws ClassNotFoundException, CloneNotSupportedException {
+		
+		Singleton singleton=Singleton.getSingleton();
+		System.out.println(singleton.hashCode());
+		
+		
+//		Class<?> clazz=Class.forName("com.dp.creational.a.singleton.Student");
+//		
+//		Method method[]=clazz.getMethods();
+//		
+//		for(Method m: method) {
+//			System.out.println(m.getName());
+//		}
+		
+		
+//		
+//		Singleton singleton=Singleton.getSingleton();
+//		
+//		Singleton singleton2=(Singleton) singleton.clone();
+//		
+//		System.out.println(singleton.hashCode());
+//		System.out.println(singleton2.hashCode());
+//		
+		
+		
+		
+	}
+}

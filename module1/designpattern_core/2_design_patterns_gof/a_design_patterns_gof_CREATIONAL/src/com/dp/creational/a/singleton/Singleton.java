@@ -1,5 +1,7 @@
 package com.dp.creational.a.singleton;
 
+import java.io.Serializable;
+
 /*
  	" one object per application" ex logging , db connection etc
 
@@ -12,23 +14,57 @@ package com.dp.creational.a.singleton;
 	=> best practices, effective java
 	=> using enum
  */
-public class Singleton {
+final public class Singleton implements Cloneable, Serializable{
 
-	private volatile Singleton singleton = null;
+	//java 1.4 bad solution
+	//java 1.5 good solution
+	private volatile  static Singleton singleton = null;// lazy vs eager way
 
 	private Singleton() {
+		System.out.println("ctr");
 	}
 
-	public Singleton getSingleInstance() {
+	// t1 t2
+	public static Singleton getSingleton() {
 		if (singleton == null) {
 			synchronized (Singleton.class) {
 				if (singleton == null) {
-					singleton = new Singleton();
+					singleton = new Singleton();//atomic
 				}
 			}
 		}
-
 		return singleton;
 	}
 
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		//throw new CloneNotSupportedException();
+		return singleton;
+	}
+	
+	//call back : u just define this method ..jvm call this before de-ser
+	private Object readResolve() {
+		System.out.println("--------readResolve------------");
+		return singleton;
+	}
+	
 }
+
+//int i=5;
+//long i=5;read in two step
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

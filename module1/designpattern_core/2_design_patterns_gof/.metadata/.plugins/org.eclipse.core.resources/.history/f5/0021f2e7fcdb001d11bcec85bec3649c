@@ -1,0 +1,25 @@
+package com.dp.creational.a.singleton;
+
+import java.lang.reflect.Method;
+
+public class Main {
+
+	public static void main(String[] args) throws ClassNotFoundException {
+		
+		Class<?> clazz=Class.forName("com.dp.creational.a.singleton.Student");
+		
+		Method method[]=clazz.getMethods();
+		
+		
+		
+		
+		Singleton singleton=Singleton.getSingleton();
+		
+		Singleton singleton2=Singleton.getSingleton();
+		
+		System.out.println(singleton.hashCode());
+		System.out.println(singleton2.hashCode());
+		
+		
+	}
+}

@@ -14,22 +14,22 @@ public class Main {
 		menu.addItem(i2);
 		menu.addItem(i3);
 
-		System.out.println("Displaying Menu:");
-		Iterator<Item> iterator = menu.iterator();
-		while (iterator.hasNext()) {
-			Item item = iterator.next();
-			System.out.println(item);
-		}
-
-		System.out.println("\nRemoving last item returned");
-		iterator.remove();
-
-		System.out.println("\nDisplaying Menu:");
-		iterator = menu.iterator();
-		while (iterator.hasNext()) {
-			Item item = iterator.next();
-			System.out.println(item);
-		}
+//		System.out.println("Displaying Menu:");
+//		Iterator<Item> iterator = menu.iterator();
+//		while (iterator.hasNext()) {
+//			Item item = iterator.next();
+//			System.out.println(item);
+//		}
+//
+//		System.out.println("\nRemoving last item returned");
+//		iterator.remove();
+//
+//		System.out.println("\nDisplaying Menu:");
+//		iterator = menu.iterator();
+//		while (iterator.hasNext()) {
+//			Item item = iterator.next();
+//			System.out.println(item);
+//		}
 
 	}
 
