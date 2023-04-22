@@ -8,6 +8,7 @@ public class Food {
 	private int vitB12;
 	private int vitB5;
 	private int vitD;
+	
 	public String getName() {
 		return name;
 	}
@@ -60,6 +61,16 @@ public class Food {
 		this.vitB5 = vitB5;
 		this.vitD = vitD;
 	}
+	
+	
+	public Food(String name, int unit, int vitC) {
+		super();
+		this.name = name;
+		this.unit = unit;
+		this.vitC = vitC;
+	}
+	
+	
 	public Food() {
 		super();
 		// TODO Auto-generated constructor stub

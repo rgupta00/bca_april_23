@@ -1,8 +1,5 @@
 INDEX VERSION 1.132+/home/raj/Documents/bca_april_23/module1/designpattern_core/2_design_patterns_gof/.metadata/.plugins/org.eclipse.jdt.core
-1865797976.index
-3724106518.index
-13491760.index
-1924484980.index
 859077129.index
 4153954267.index
-2517911852.index
+1865797976.index
+3724106518.index

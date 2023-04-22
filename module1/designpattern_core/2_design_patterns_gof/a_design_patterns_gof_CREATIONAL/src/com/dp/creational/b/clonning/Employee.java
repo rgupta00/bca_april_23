@@ -2,7 +2,7 @@ package com.dp.creational.b.clonning;
 
 import java.util.Date;
 
-class Employee implements Cloneable {
+class Employee  implements Cloneable{
 	private Integer id;
 	private String name;
 	private Date hireDay;//mutable
@@ -47,6 +47,21 @@ class Employee implements Cloneable {
 	public void setHireDay(Date hireDay) {
 		this.hireDay = hireDay;
 	}
+
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		Employee clonnedObject= (Employee) super.clone();
+		clonnedObject.hireDay=(Date) hireDay.clone();
+		return clonnedObject;
+		
+	}
 	
 	
 }
+
+
+
+
+
+
+

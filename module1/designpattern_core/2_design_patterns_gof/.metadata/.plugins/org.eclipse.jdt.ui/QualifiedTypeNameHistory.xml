@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.dp.structural.a.adaptor.SquarePeg"/>
-    <fullyQualifiedTypeName name="java.lang.Iterable"/>
-    <fullyQualifiedTypeName name="com.dp.behavioural.a.iterator_dp.Item"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
-    <fullyQualifiedTypeName name="com.dp.creational.a.singleton.Singleton"/>
-    <fullyQualifiedTypeName name="java.sql.Statement"/>
-</qualifiedTypeNameHistroy>

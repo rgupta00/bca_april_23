@@ -1,6 +1,7 @@
 package com.dp.behavioural.a.iterator_dp;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
@@ -9,10 +10,19 @@ public class Main {
 		Item i2 = new Item("laptop", 6.00f);
 		Item i3 = new Item("DVD", 6.50f);
 
-		Menu menu = new Menu();
-		menu.addItem(i1);
-		menu.addItem(i2);
-		menu.addItem(i3);
+		MenuArray array=new MenuArray();
+		Item []items=array.getMenuItems();
+		
+		
+		MenuLinkedList linkedList=new MenuLinkedList();
+		List<Item> menuItems = linkedList.getMenuItems();
+		
+		
+		
+//		MenuLinkedList menu = new MenuLinkedList();
+//		menu.addItem(i1);
+//		menu.addItem(i2);
+//		menu.addItem(i3);
 
 //		System.out.println("Displaying Menu:");
 //		Iterator<Item> iterator = menu.iterator();

@@ -1,5 +1,0 @@
-package com.dp.creational.d.simple_factory;
-
-public class JdbcHelloWorld {
-
-}

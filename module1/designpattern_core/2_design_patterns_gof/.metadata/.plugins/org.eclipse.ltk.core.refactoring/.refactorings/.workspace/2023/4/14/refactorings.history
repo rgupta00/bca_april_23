@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;day3-session1-7th-May-2022&apos; to &apos;a_design_patterns_gof_CREATIONAL&apos;&#x0A;- Original element: &apos;day3-session1-7th-May-2022&apos;&#x0A;- Renamed element: &apos;day3-session1-7th-May-2022&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;day3-session1-7th-May-2022&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=day3-session1-7th-May-2022" name="a_design_patterns_gof_CREATIONAL" references="true" stamp="1680752051493" version="1.0"/>
-</session>
