@@ -20,4 +20,12 @@ decorator pattern / wrapper pattern
 
 
 	=> Simple greet application:
-	---------------------------------
+	-----------------------------
+	good morning
+	sp good morning
+	very sp .....
+	
+	You need to find it into io package
+	Greeting g=new VerySpecialGreeting(new SpecialGreeting(new SimpleGreeting()));
+	
+	

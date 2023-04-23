@@ -1,0 +1,117 @@
+trainer profile
+================
+https://www.linkedin.com/in/rajeevguptajavatrainer/
+
+
+sw required
+===============
+jdk 17
+maven
+https://maven.apache.org/download.cgi
+intellij/sts
+https://dist.springsource.com/release/STS/index.html
+
+mysql
+https://dev.mysql.com/downloads/mysql/
+
+sw req:
+==========
+jdk 17+ maven + intellij/sts + mysql + laptop 8gb/16gb + ssd
+
+
+code :
+=========
+https://github.com/rgupta00/edu_april_may_23
+
+ppt pdf and other stuff:
+https://drive.google.com/drive/folders/1f5J1QTCXlNVhWBqX_3yBfx-Fh0pmc-EU?usp=sharing
+
+youtube
+=======
+https://www.youtube.com/@busycoderacademy
+
+course plan:
+===========
+8 session 3X8=24hr
+
+Session wise plan:
+
+session 1: DI and AOP
+Session 2: Spring jdbc+ hibernate
+Session 3: Spring MVC
+Session 4: Spring boot 
+Session 5: Spring security
+Session 6: Spring integration
+Session 7: Introduction to microservice / interview prepration
+
+
+
+
+
+
+ <bean id="car" class="com.demo.Car">
+        <property name="carName" value="tata "/>
+        <property name="tyre" ref="tyre2"/>
+    </bean>
+
+    <bean id="tyre1" class="com.demo.CeatTyre"/>
+    <bean id="tyre2" class="com.demo.MrfTyre"/>
+    
+    
+    
+
+
+      
+Bank application:
+----------------
+		
+		
+		
+public interface AccountDao {
+	public List<Account> getAll();
+	public Account getById(int id);
+	public void updateAccount(Account account);
+	public void addAccount(Account account);
+	public void deleteAccount(int id);
+}
+
+
+public class AccountDaoCollectionImpl implements AccountDao{
+	private Map<Integer, Account> accounts=new HashMap<>();
+	
+	public AccountDaoCollectionImpl() {
+		accounts.put(1, new Account(1, "raj", 560000.00));
+		accounts.put(2, new Account(2, "ekta", 760000.00));
+	}
+	@Override
+	public List<Account> getAll() {
+		System.out.println("getAll using hard coded collection...");
+		return new ArrayList<Account>(accounts.values());
+	}
+
+	@Override
+	public Account getById(int id) {
+		return accounts.get(id);
+	}
+
+	@Override
+	public void updateAccount(Account account) {
+		try {
+			Thread.sleep(1000);
+		}catch(InterruptedException e) {}
+		accounts.put(account.getId(), account);
+	}
+
+	@Override
+	public void addAccount(Account account) {
+		
+	}
+
+	@Override
+	public void deleteAccount(int id) {
+		
+	}
+
+}
+
+
