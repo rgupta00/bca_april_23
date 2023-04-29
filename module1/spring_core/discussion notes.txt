@@ -1,13 +1,10 @@
-trainer profile
-================
-https://www.linkedin.com/in/rajeevguptajavatrainer/
-
 
 sw required
 ===============
 jdk 17
 maven
 https://maven.apache.org/download.cgi
+
 intellij/sts
 https://dist.springsource.com/release/STS/index.html
 
@@ -18,31 +15,25 @@ sw req:
 ==========
 jdk 17+ maven + intellij/sts + mysql + laptop 8gb/16gb + ssd
 
+============================
+How all DP fit into spring?
+============================
+GOF
+J2EE
+EIP
+Thread DP
+ms
 
-code :
-=========
-https://github.com/rgupta00/edu_april_may_23
+-----------------------
 
-ppt pdf and other stuff:
-https://drive.google.com/drive/folders/1f5J1QTCXlNVhWBqX_3yBfx-Fh0pmc-EU?usp=sharing
-
-youtube
-=======
-https://www.youtube.com/@busycoderacademy
-
-course plan:
-===========
-8 session 3X8=24hr
-
-Session wise plan:
-
-session 1: DI and AOP
-Session 2: Spring jdbc+ hibernate
-Session 3: Spring MVC
-Session 4: Spring boot 
-Session 5: Spring security
-Session 6: Spring integration
-Session 7: Introduction to microservice / interview prepration
+session 6: DI
+Session 7:AOP and Spring jdbc
+Session 8: Spring and hibernate
+Session 9: Spring MVC
+Session 10: Spring boot 
+Session 11: Spring boot
+Session 12: spring security
+Session 13: Introduction to microservice 
 
 
 
