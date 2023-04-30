@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 @Repository
-@Primary
+//@Primary
 public class ProductDaoImplJdbc implements ProductDao {
 
     private DataSource dataSource;
@@ -28,8 +28,9 @@ public class ProductDaoImplJdbc implements ProductDao {
     public List<Product> getAll() {
         List<Product> products=new ArrayList<>();
         //:( rs to object ==> ORM
+        Connection connection=null;
        try{
-           Connection connection=dataSource.getConnection();
+          connection =dataSource.getConnection();
            PreparedStatement pstmt=connection.prepareStatement("select * from product_table");
 
            ResultSet rs=pstmt.executeQuery();
@@ -38,6 +39,12 @@ public class ProductDaoImplJdbc implements ProductDao {
            }
        }catch (SQLException ex){
            ex.printStackTrace();
+       }finally {
+           if(connection != null){
+              try{
+                  connection.close();
+              }catch (SQLException e){}
+           }
        }
 
        return  products;

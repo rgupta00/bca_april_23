@@ -16,11 +16,13 @@
         <jdbc.mysql.version>5.1.47</jdbc.mysql.version>
     </properties>
     <dependencies>
+        <!--apectJ-->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>

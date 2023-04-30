@@ -6,9 +6,11 @@ import com.productstore.model.dto.Product;
 import com.productstore.model.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 @Service(value = "productService")
+@Transactional //AOP : Aspect oriented programming
 public class ProductServiceImpl implements ProductService{
 
     private ProductDao productDao;

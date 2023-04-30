@@ -7,12 +7,19 @@ import java.util.Objects;
 /*
     POJO vs record(immutable) not supported as @Entity by hib
  */
-@Data
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Product {
     private Integer id;
     private String name;
     private BigDecimal price;
 
+    public Product(String name, BigDecimal price) {
+        this.name = name;
+        this.price = price;
+    }
 }
