@@ -1,0 +1,8 @@
+#my:
+#  message: hello default message
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/demo123?useSSL=false
+#    username: root
+#    password: root
+#    driverClassName: com.mysql.cj.jdbc.Driver

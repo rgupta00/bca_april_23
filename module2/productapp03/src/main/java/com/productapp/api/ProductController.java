@@ -1,0 +1,33 @@
+package com.productapp.api;
+
+import com.productapp.dto.Product;
+import com.productapp.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class ProductController {
+
+    @Value("${my.message: not found}")
+    private String message;
+
+    @GetMapping("hello")
+    public String hello(){
+        return message;
+    }
+    private ProductService productService;
+
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @GetMapping("products")
+    public List<Product> getAll(){
+        return productService.getAll();
+    }
+}
