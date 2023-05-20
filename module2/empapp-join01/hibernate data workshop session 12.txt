@@ -1,0 +1,199 @@
+Spring data in depth:
+-----------------------
+spring data basics 
+spring Quaries, @Query annotation
+spring data envers
+Spring data Joins 
+Spring data Joins REST
+projects:
+	1. Employee Department application
+	2. Blog post application
+	3. Event management application
+	4. Bank application
+	
+	
+	
+	
+
+
+
+Spring data join examples:
+----------------------------
+one to one
+----------
+Employee ------<>-------Parking
+
+
+one to many
+----------
+ 1			N
+Department ---<>---------Employee
+
+public class Department {
+	private int did;
+	private String dname;
+	private List<Employee>employees=new ArrayList<>();
+}
+
+
+public class Employee {
+	private int eid;
+	private String name;
+	private double salary;
+	private Department department;
+
+}
+
+
+Initilizing data:
+-----------------
+
+		Department d1=new Department("fin");
+		Department d2=new Department("IT");
+		Department d3=new Department("sales");
+		
+		Employee emp1=new Employee("ravi", 6000.00, d1);
+		Employee emp2=new Employee("ekta", 4000.00, d1);
+		
+		Employee emp3=new Employee("keshav", 7000.00, d2);
+		Employee emp4=new Employee("gunika", 3400.00, d2);
+		
+		Employee emp5=new Employee("raj", 7800.00, d3);
+		
+		//dept 1 have 1,2 emps
+		d1.getEmployees().add(emp1);
+		d1.getEmployees().add(emp2);
+		
+		
+		d2.getEmployees().add(emp3);
+		d2.getEmployees().add(emp4);
+		
+		d3.getEmployees().add(emp5);
+		
+		deptRepo.save(d1);
+		deptRepo.save(d2);
+		deptRepo.save(d3);
+		
+		empRepo.save(emp1);
+		empRepo.save(emp2);
+		empRepo.save(emp3);
+		empRepo.save(emp4);
+		empRepo.save(emp5);
+	
+
+
+
+
+
+
+
+
+
+
+Blogpost application:
+---------------------
+POJO:
+------
+public class Blog {
+
+	private Long id;
+	private String title;
+	private String author;
+	private String content;
+	
+	List<Comment>comments=new ArrayList<Comment>();
+	
+	public void addComment(Comment comment){
+		comments.add(comment);
+		comment.setBlog(this);
+	}
+	
+	public void removeComment(Comment comment){
+		comments.remove(comment);
+		comment.setBlog(null);
+	}
+}	
+	
+	
+
+
+public class Comment {
+	
+	private Long id;
+	private String comment;
+	private LocalDateTime createdAt;
+	
+	private Blog blog;
+	
+	public Blog getBlog() {
+		return blog;
+	}
+	public void setBlog(Blog blog) {
+		this.blog = blog;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Comment(String comment) {
+		this.comment = comment;
+		this.createdAt = LocalDateTime.now();
+	}
+	
+	public Comment(Blog blog, String comment) {
+		this.blog=blog;
+		this.comment = comment;
+		this.createdAt = LocalDateTime.now();
+	}
+	
+
+.......
+}
+
+
+
+data insertion:
+----------------
+
+//blogRepo.delete(blogRepo.getOne(1L));
+		
+		/*Blog blog=new Blog("spring5", "amit", "spring 5 is lastest form spring.io");
+		Blog blog2=new Blog("java8", "raj", "java 8 is morden java");
+		
+		Comment comment1=new Comment(blog, "good blog on spring 5");
+		Comment comment2=new Comment(blog, "spring 5 rock");
+		Comment comment3=new Comment(blog, "i need basic into to spring first");
+		
+		Comment comment4=new Comment(blog2, "good blog on spring 8");
+		Comment comment5=new Comment(blog2, "need more details");
+		Comment comment6=new Comment(blog2, "i need basic of collection");
+		
+		blogRepo.save(blog);
+		commentRepo.save(comment1);
+		commentRepo.save(comment2);
+		commentRepo.save(comment3);
+		
+		blogRepo.save(blog2);
+		commentRepo.save(comment4);
+		commentRepo.save(comment5);
+		commentRepo.save(comment6);
+		*/
+
+
+
+
+
