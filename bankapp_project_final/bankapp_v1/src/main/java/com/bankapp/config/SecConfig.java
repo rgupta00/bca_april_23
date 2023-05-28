@@ -4,66 +4,74 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
 
 @Component
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 //                              some sp regex   , works when method finished but returing a object
 //Method level sec: @Secure, [@PreAuthrized , @PostAuthorized], @RoleAllowed(EJB)
-@EnableGlobalMethodSecurity(prePostEnabled = true)
-public class SecConfig extends WebSecurityConfigurerAdapter {
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
+public class SecConfig {
 
     @Autowired
     private UserDetailsService userDetailsService;
-    //401
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    //  AuthenticationManager pr= auth.inMemoryAuthentication().and().build();
 
-        auth.userDetailsService(userDetailsService);
-//        auth.inMemoryAuthentication()
-//                .withUser("raj").password("raj123").roles("MGR")
-//                .and()
-//                .withUser("ekta").password("ekta123").roles("CLERK");
+    @Autowired
+    private JwtAuthentationFilter jwtAuthentationFilter;
+
+    @Bean
+    public AuthenticationProvider authenticationProvider(){
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setUserDetailsService(userDetailsService);
+        provider.setPasswordEncoder(encoding());
+        return  provider;
     }
 
-    //password encoding
     @Bean
     public PasswordEncoder encoding(){
         return NoOpPasswordEncoder.getInstance();
     }
-    //403
-
-
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/h2/**");
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws  Exception{
+        return
+                httpSecurity.csrf()
+                        .disable()
+                        .authorizeHttpRequests()
+                        .requestMatchers("/home","/authenticate","/register").permitAll()
+                        .and()
+                        .authorizeHttpRequests().requestMatchers("/**").authenticated()
+                        .and()
+                        .httpBasic()
+                        .and()
+                        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                        .and()
+                        .authenticationProvider(authenticationProvider())
+                        .addFilterBefore(jwtAuthentationFilter, UsernamePasswordAuthenticationFilter.class)
+                        .build();
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.csrf()
-                .disable()
-                //.antMatchers("/home/**").permitAll()
-                .authorizeRequests().anyRequest().authenticated()
 
-                .and()
-//                .antMatchers("/mgr/**").hasAnyRole("MGR")
-//                .antMatchers("/clerk/**").hasAnyRole("MGR", "CLERK")
+    //Authenticationmanager
 
-                .httpBasic()
-                .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationManager)throws Exception{
+        return authenticationManager.getAuthenticationManager();
     }
 
 
