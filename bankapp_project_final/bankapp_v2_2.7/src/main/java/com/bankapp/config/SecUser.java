@@ -16,7 +16,6 @@ public class SecUser implements UserDetails {
     public SecUser(UserEntity userEntity) {
         this.userEntity = userEntity;
     }
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<String> roles=userEntity.getRoles();

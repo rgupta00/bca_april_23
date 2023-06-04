@@ -69,19 +69,14 @@ public class SecConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf()
                 .disable()
-                //.antMatchers("/home/**").permitAll()
                 .authorizeRequests().anyRequest().authenticated()
-
+                .antMatchers("/mgr/**").hasAnyRole("MGR")
+                .antMatchers("/clerk/**").hasAnyRole("MGR", "CLERK")
                 .and()
-//                .antMatchers("/mgr/**").hasAnyRole("MGR")
-//                .antMatchers("/clerk/**").hasAnyRole("MGR", "CLERK")
-
                 .httpBasic()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
-
-
 }
 
 

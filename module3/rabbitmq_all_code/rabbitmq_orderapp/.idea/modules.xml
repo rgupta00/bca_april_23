@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/orderapp/orderapp.iml" filepath="$PROJECT_DIR$/orderapp/orderapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orderappclient/orderappclient.iml" filepath="$PROJECT_DIR$/orderappclient/orderappclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rabbitmq_demo.iml" filepath="$PROJECT_DIR$/.idea/rabbitmq_demo.iml" />
+    </modules>
+  </component>
+</project>

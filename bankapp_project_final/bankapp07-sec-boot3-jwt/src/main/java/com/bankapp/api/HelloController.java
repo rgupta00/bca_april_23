@@ -22,15 +22,9 @@ public class HelloController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @GetMapping(path = "home")
-    public String home() {
-        return "home ";
-    }
-
     //3. craete a endpoint so that user can send his u/p and get token
     @PostMapping(path = "authenticate")
     public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
-
         Authentication authentication
                 =authenticationManager.
                 authenticate(new UsernamePasswordAuthenticationToken(
@@ -45,6 +39,11 @@ public class HelloController {
         }
 
 
+    }
+
+    @GetMapping(path = "home")
+    public String home() {
+        return "home ";
     }
 
     @PreAuthorize("hasAuthority('ROLE_MGR')")
