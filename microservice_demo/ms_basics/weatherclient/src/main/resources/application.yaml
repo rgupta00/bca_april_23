@@ -1,0 +1,40 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /wclient
+spring:
+  application:
+    name: weather-client
+eureka:
+  client:
+    registry-fetch-interval-seconds: 10
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+#eureka.client.registryFetchIntervalSeconds=5
+resilience4j:
+  circuitbreaker:
+    instances:
+      weatherservice:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always

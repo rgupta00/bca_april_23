@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/apigateway/apigateway.iml" filepath="$PROJECT_DIR$/apigateway/apigateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authserver/authserver.iml" filepath="$PROJECT_DIR$/authserver/authserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaservice/eurekaservice.iml" filepath="$PROJECT_DIR$/eurekaservice/eurekaservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ms_basics.iml" filepath="$PROJECT_DIR$/.idea/ms_basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weatherclient/weatherclient.iml" filepath="$PROJECT_DIR$/weatherclient/weatherclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weatherservice/weatherservice.iml" filepath="$PROJECT_DIR$/weatherservice/weatherservice.iml" />
+    </modules>
+  </component>
+</project>
