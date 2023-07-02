@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/weatherclient/pom.xml" />
         <option value="$PROJECT_DIR$/weatherservice/pom.xml" />
         <option value="$PROJECT_DIR$/eurekaservice/pom.xml" />
+        <option value="$PROJECT_DIR$/apigateway/pom.xml" />
+        <option value="$PROJECT_DIR$/authserver/pom.xml" />
       </list>
     </option>
   </component>

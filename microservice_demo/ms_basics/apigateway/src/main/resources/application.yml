@@ -1,0 +1,29 @@
+server:
+  port: 8099
+spring:
+  application:
+    name: apigateway-server
+  cloud:
+    gateway:
+      routes:
+        - id: wservice-id
+          uri: lb://WEATHER-SERVICE
+          predicates:
+            - Path=/wservice/**
+          filters:
+            - name: AuthenticationFilter
+
+        - id: wclient-id
+          uri: lb://WEATHER-CLIENT
+          predicates:
+            - Path=/wclient/**
+          filters:
+            - name: AuthenticationFilter
+eureka:
+  client:
+    registry-fetch-interval-seconds: 10
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+

@@ -14,7 +14,6 @@ public class WeatherServiceController {
 
     @GetMapping(path="weatherinfo/{temp}")
     public String getWeatherInfo(@PathVariable int temp){
-
         return weatherService.getWeatherInfo(temp);
     }
 
