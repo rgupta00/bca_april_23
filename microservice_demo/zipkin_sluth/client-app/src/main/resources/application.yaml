@@ -12,6 +12,8 @@ management:
     health:
       show-details: always
 
+
+
 resilience4j:
   circuitbreaker:
     instances:

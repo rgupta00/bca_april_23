@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: ELK-STACK-EXAMPLE
+server:
+  port: 9191
+logging:
+  file: /home/raj/Desktop/logs/demolog.log
