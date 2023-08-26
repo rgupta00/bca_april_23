@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eurekaserver" />
+        <module name="orderapp" />
+        <module name="couponapp" />
+        <module name="customerapp" />
+        <module name="productapp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="couponapp" target="11" />
+      <module name="customerapp" target="11" />
+      <module name="eurekaserver" target="11" />
+      <module name="orderapp" target="11" />
+      <module name="productapp" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="couponapp" options="-parameters" />
+      <module name="customerapp" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
+      <module name="orderapp" options="-parameters" />
+      <module name="productapp" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/couponapp/couponapp.iml" filepath="$PROJECT_DIR$/couponapp/couponapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customerapp/customerapp.iml" filepath="$PROJECT_DIR$/customerapp/customerapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orderapp/orderapp.iml" filepath="$PROJECT_DIR$/orderapp/orderapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/productapp/productapp.iml" filepath="$PROJECT_DIR$/productapp/productapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/project_productstore.iml" filepath="$PROJECT_DIR$/.idea/project_productstore.iml" />
+    </modules>
+  </component>
+</project>
